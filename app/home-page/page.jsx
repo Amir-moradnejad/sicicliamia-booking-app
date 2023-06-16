@@ -6,19 +6,6 @@ import Carousel from "../components/carousel";
 import Link from "next/link";
 
 export default function Homepage() {
-  // document.addEventListener('DOMContentLoaded', function () {
-  //   const paragraph = document.querySelector('.paragraph');
-  //   const readMoreLink = paragraph.querySelector('.read-more');
-
-  //   readMoreLink.addEventListener('click', function (e) {
-  //     e.preventDefault();
-  //     paragraph.style.maxHeight = 'none';
-  //     paragraph.style.backgroundColor = 'red';
-  //     console.log('helo this is it')
-  //     paragraph.classList.add('show-more');
-  //     readMoreLink.style.display = 'none';
-  //   });
-  // });
   useEffect(() => {
     const paragraph = document.querySelector(".paragraph");
     const readMoreLink = paragraph.querySelector(".read-more");
@@ -49,7 +36,6 @@ export default function Homepage() {
   return (
     <React.StrictMode>
       <div className="bg-white">
-        <div>Home page</div>
         <Carousel />
         <main className="px-5 bg-white">
           <section className=" grid grid-cols-1 ">
@@ -84,7 +70,7 @@ export default function Homepage() {
             <h1 className="uppercase text-blue-900 font-bold text-2xl my-5">
               Gallery
             </h1>
-            <div className="bg-blue-500 w-full h-[400px] bg-[url('/images/gray-shoe.jpg')] bg-cover bg-no-repeat"></div>
+            <div className="bg-blue-500 w-full h-[400px] bg-[url('/images/puttingOnShoes.jpg')] bg-cover bg-no-repeat"></div>
             <button
               type="submit"
               className="text-blue-900 font-semibold items-center bg-transparent  border border-blue-900 hover:bg-blue-900 hover:underline hover:text-white py-3 px-4  my-10 mx-auto uppercase"
@@ -97,7 +83,7 @@ export default function Homepage() {
             <h1 className="uppercase text-blue-900 font-bold text-2xl my-5">
               Recommendation
             </h1>
-            <div className="bg-blue-500 w-full h-[400px] bg-[url('/images/gray-shoe.jpg')] bg-cover bg-no-repeat"></div>
+            <div className="bg-blue-500 w-full h-[400px] bg-[url('/images/nature-norway.jpg')] bg-cover bg-no-repeat"></div>
             <button
               type="submit"
               className="text-blue-900 font-semibold items-center bg-transparent  border border-blue-900 hover:bg-blue-900 hover:underline hover:text-white py-3 px-4  my-10 mx-auto uppercase"
@@ -108,9 +94,9 @@ export default function Homepage() {
           {/* about us  */}
           <section className=" grid grid-cols-1 ">
             <h1 className="uppercase text-blue-900 font-bold text-2xl my-5">
-              aboout us
+              about us
             </h1>
-            <div className="bg-blue-500 w-full h-[400px] bg-[url('/images/gray-shoe.jpg')] bg-cover bg-no-repeat"></div>
+            <div className="bg-blue-500 w-full h-[400px] bg-[url('/images/walking-leg2.jpg')] bg-cover bg-no-repeat"></div>
             <div className="paragraph relative overflow-hidden max-h-40 my-5">
               <p className=" text-blue-900 m-0">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
@@ -151,12 +137,12 @@ export default function Homepage() {
           </section>
 
           {/* needs recomendation  */}
-          <section className=" grid grid-cols-1 bg-gray-50 my-5 p-5">
-            <div className="bg-blue-500 w-full h-[200px] bg-[url('/images/gray-shoe.jpg')] bg-cover bg-no-repeat"></div>
+          <section className=" text-center bg-gray-50 my-5 p-5">
+            <div className="bg-blue-500 w-full h-[200px] bg-[url('/images/nature1.jpg')] bg-cover bg-no-repeat"></div>
             <h1 className=" text-blue-900 font-bold text-xl my-5">
               Need recommendations?
             </h1>
-            <p className=" text-blue-900 text-sm my-5 px-16">
+            <p className=" text-blue-900 text-sm my-5">
               Leave the request and we will get back to you
             </p>
             <button
@@ -169,13 +155,28 @@ export default function Homepage() {
 
           {/* support tab  */}
           <section className=" grid grid-cols-3 gap-3 bg-gray-50 my-5 p-5">
-            <div className="bg-red-500 p-5 text-center"></div>
-            <div className="bg-red-500 p-5 text-center"></div>
-            <div className="bg-red-500 p-5 text-center"></div>
+            <div className=" font-semibold text-center">
+              <i className="block text-blue-900 text-xl">@</i>
+              <Link href="#" className="uppercase text-blue-900 text-normal">
+                Support
+              </Link>
+            </div>
+            <div className=" font-semibold text-center">
+              <i className="block text-blue-900 text-xl">@</i>
+              <Link href="#" className="uppercase text-blue-900 text-normal">
+               FAQ
+              </Link>
+            </div>
+            <div className=" font-semibold text-center">
+              <i className="block text-blue-900 text-xl">@</i>
+              <Link href="#" className="uppercase text-blue-900 text-normal">
+                FEEDBACK
+              </Link>
+            </div>
           </section>
           {/* location map  */}
           <section className=" grid grid-cols-1 bg-gray-50 my-5">
-            <div className="bg-blue-500 w-full h-[400px] bg-[url('/images/gray-shoe.jpg')] bg-cover bg-no-repeat"></div>
+            <div className="bg-blue-500 w-full h-[400px] bg-[url('/images/map.jpg')] bg-cover bg-no-repeat"></div>
           </section>
 
           {/*  news letter */}
@@ -211,8 +212,8 @@ export default function Homepage() {
           </section>
         </main>
         {/* footer */}
-        <footer className=" grid grid-cols-1 gap-5 px-5 bg-white">
-          <div className="grid grid-cols-1 gap-5 px-5 ">
+        <footer className=" gap-5 px-5 bg-white">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 px-5 ">
             {/* about us */}
             <div className="text-center  border-b border-x-0 border-t-0  border-gray-300 py-5">
               <h1 className="uppercase text-blue-900 font-bold text-xl my-5">
@@ -245,41 +246,43 @@ export default function Homepage() {
                 Contact Us
               </h1>
               <div className="py-2">
-                <i className="block text-blue-900 text-xl">@@</i>
+                <i className="block text-blue-900 text-xl">@</i>
                 <Link href="#" className=" text-blue-900 text-sm">
                   +354 7756 6480
                 </Link>
               </div>
               <div className="py-2">
-                <i className="block text-blue-900 text-xl">@@</i>
+                <i className="block text-blue-900 text-xl">@</i>
                 <Link href="#" className=" text-blue-900 text-sm">
                   Whatsapp
                 </Link>
               </div>
-             
+
               <div className="py-2">
-                <i className="block text-blue-900 text-xl">@@</i>
+                <i className="block text-blue-900 text-xl">@</i>
                 <Link href="#" className=" text-blue-900 text-sm">
                   info@bluehouse.is
                 </Link>
               </div>
-             
+
               <div className="py-2">
-                <i className="block text-blue-900 text-xl">@@</i>
+                <i className="block text-blue-900 text-xl">@</i>
                 <Link href="#" className=" text-blue-900 text-sm">
-                  Valhusabraut 19 <br />Seltjarnarnes, 170, Iceland
+                  Valhusabraut 19 <br />
+                  Seltjarnarnes, 170, Iceland
                 </Link>
               </div>
-             
+
               <div className="py-2">
-                <i className="block text-blue-900 text-xl">@@</i>
+                <i className="block text-blue-900 text-xl">@</i>
                 <Link href="#" className=" text-blue-900 text-sm">
-                  Grotta Nortern <br />Lights Apartment
+                  Grotta Nortern <br />
+                  Lights Apartment
                 </Link>
               </div>
             </div>
             {/* follow us */}
-            <div className="text-center ">
+            <div className="text-center border-b border-x-0 border-t-0  border-gray-300 py-5">
               <h1 className="uppercase text-blue-900 font-bold text-xl my-5">
                 Follow Us
               </h1>
@@ -288,10 +291,10 @@ export default function Homepage() {
               <i className="text-blue-900 text-xl mx-2">@</i>
               <i className="text-blue-900 text-xl mx-2">$</i>
             </div>
-            <p className=" text-blue-900 opacity-60 text-sm my-5 px-16 text-center w-full">
+          </div>
+            <p className=" text-blue-900 opacity-60 text-sm px-16 py-5 text-center w-full">
               Blue House 2023
             </p>
-          </div>
         </footer>
       </div>
     </React.StrictMode>
