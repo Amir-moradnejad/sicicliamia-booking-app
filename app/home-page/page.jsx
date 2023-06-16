@@ -164,12 +164,56 @@ export default function Homepage() {
           <section className=" grid grid-cols-1 bg-gray-50 my-5">
             <div className="bg-blue-500 w-full h-[400px] bg-[url('/images/gray-shoe.jpg')] bg-cover bg-no-repeat"></div>
           </section>
+
+          {/*  news letter */}
+          <section className=" grid grid-cols-1  my-5 p-5 text-center border-b border-x-0 border-t-0  border-gray-200">
+            <h1 className="uppercase text-blue-900 font-bold text-xl my-5">
+              Our NewsLetter
+            </h1>
+            <p className=" text-blue-900 text-sm mb-10 px-16">
+              Sign up for our newsletter!
+            </p>
+            <form action="">
+              <input type="text" name="Fname" id="Fname"  placeholder="Your full name" className="w-full py-2 placeholder-gray-300 text-gray-500  border-b border-x-0 border-t-0  border-blue-900 my-1 focus:outline-none "/>
+              <input type="email" name="email" id="email" placeholder="Your email address" className="w-full py-2 placeholder-gray-300 text-gray-500  border-b border-x-0 border-t-0  border-blue-900 my-1 focus:outline-none "/>
+              <button
+                type="submit"
+                className="bg-blue-900 font-semibold items-center text-white w-full border border-blue-900 hover:bg-blue-900 hover:underline hover:text-white py-3 px-4 my-5 mx-auto uppercase"
+              >
+                Sign Up
+              </button>
+            </form>
+          </section>
         </main>
         {/* footer */}
         <footer className=" grid grid-cols-1 gap-5 px-5 bg-white">
-          <div className="text-center bg-red-500 p-10"></div>
-          <div className="text-center bg-red-500 p-10"></div>
-          <div className="text-center bg-red-500 p-10"></div>
+          <div className="grid grid-cols-1 gap-5 px-5 ">
+          <div className="text-center  border-b border-x-0 border-t-0  border-gray-300">
+             <h1 className="uppercase text-blue-900 font-bold text-xl my-5">
+              Our NewsLetter
+            </h1>
+            <p className=" text-blue-900 text-sm mb-10 px-16">
+              Sign up for our newsletter!
+            </p>
+          </div>
+          <div className="text-center  border-b border-x-0 border-t-0  border-gray-300">
+             <h1 className="uppercase text-blue-900 font-bold text-xl my-5">
+              Our NewsLetter
+            </h1>
+            <p className=" text-blue-900 text-sm mb-10 px-16">
+              Sign up for our newsletter!
+            </p>
+          </div>
+          <div className="text-center  border-b border-x-0 border-t-0  border-gray-300">
+             <h1 className="uppercase text-blue-900 font-bold text-xl my-5">
+              Our NewsLetter
+            </h1>
+            <p className=" text-blue-900 text-sm mb-10 px-16">
+              Sign up for our newsletter!
+            </p>
+          </div>
+          <p className=" text-blue-900 opacity-60 text-sm mb-10 px-16 text-center w-full">Blue House 2023</p>
+          </div>
         </footer>
       </div>
     </React.StrictMode>
