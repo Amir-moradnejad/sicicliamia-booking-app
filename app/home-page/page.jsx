@@ -3,7 +3,7 @@
 // import React from "react";
 import React, { useEffect } from "react";
 import Carousel from "../components/carousel";
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Homepage() {
   // document.addEventListener('DOMContentLoaded', function () {
@@ -22,10 +22,20 @@ export default function Homepage() {
   useEffect(() => {
     const paragraph = document.querySelector(".paragraph");
     const readMoreLink = paragraph.querySelector(".read-more");
+    const showLessLink = paragraph.querySelector(".show-less");
 
     readMoreLink.addEventListener("click", function (e) {
       e.preventDefault();
       paragraph.style.maxHeight = "none";
+      readMoreLink.style.display = "none";
+      showLessLink.style.display = "block";
+    });
+
+    showLessLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      paragraph.style.maxHeight = "10rem";
+      readMoreLink.style.display = "block";
+      showLessLink.style.display = "none";
     });
 
     return () => {
@@ -117,16 +127,19 @@ export default function Homepage() {
                 optio autem unde quidem fuga. Aliquam in aspernatur earum id
                 optio rerum.
               </p>
-              <button className="read-more absolute bottom-0 right-0 bg-transparent text-blue-900 p-2">
+              <span className="show-less hidden absolute -bottom-1 underline right-0 cursor-pointer bg-white text-blue-900 opacity-40">
+                Show Less
+              </span>
+              <span className="read-more absolute -bottom-1 underline right-0 cursor-pointer bg-white text-blue-900">
                 Read more
-              </button>
+              </span>
             </div>
             <div className="text-center bg-gray-50 my-1 py-2">
               <h1 className=" text-blue-900 font-bold text-xl my-5">
                 Dont know which one to choose?
               </h1>
               <p className=" text-blue-900 text-sm my-5 px-16">
-                Leave the request and we will get back to you
+                Leave the request and we will get back to you span
               </p>
               <button
                 type="submit"
@@ -174,8 +187,20 @@ export default function Homepage() {
               Sign up for our newsletter!
             </p>
             <form action="">
-              <input type="text" name="Fname" id="Fname"  placeholder="Your full name" className="w-full py-2 placeholder-gray-300 text-gray-500  border-b border-x-0 border-t-0  border-blue-900 my-1 focus:outline-none "/>
-              <input type="email" name="email" id="email" placeholder="Your email address" className="w-full py-2 placeholder-gray-300 text-gray-500  border-b border-x-0 border-t-0  border-blue-900 my-1 focus:outline-none "/>
+              <input
+                type="text"
+                name="Fname"
+                id="Fname"
+                placeholder="Your full name"
+                className="w-full py-2 placeholder-gray-300 text-gray-500  border-b border-x-0 border-t-0  border-blue-900 my-1 focus:outline-none "
+              />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Your email address"
+                className="w-full py-2 placeholder-gray-300 text-gray-500  border-b border-x-0 border-t-0  border-blue-900 my-1 focus:outline-none "
+              />
               <button
                 type="submit"
                 className="bg-blue-900 font-semibold items-center text-white w-full border border-blue-900 hover:bg-blue-900 hover:underline hover:text-white py-3 px-4 my-5 mx-auto uppercase"
@@ -188,31 +213,84 @@ export default function Homepage() {
         {/* footer */}
         <footer className=" grid grid-cols-1 gap-5 px-5 bg-white">
           <div className="grid grid-cols-1 gap-5 px-5 ">
-          <div className="text-center  border-b border-x-0 border-t-0  border-gray-300">
-             <h1 className="uppercase text-blue-900 font-bold text-xl my-5">
-              Our NewsLetter
-            </h1>
-            <p className=" text-blue-900 text-sm mb-10 px-16">
-              Sign up for our newsletter!
+            {/* about us */}
+            <div className="text-center  border-b border-x-0 border-t-0  border-gray-300 py-5">
+              <h1 className="uppercase text-blue-900 font-bold text-xl my-5">
+                About Us
+              </h1>
+              <div className="py-2">
+                <Link href="#" className=" text-blue-900 text-sm">
+                  House Rules & Concellation Policy
+                </Link>
+              </div>
+              <div className="py-2">
+                <Link href="#" className=" text-blue-900 text-sm">
+                  Blue House Blog
+                </Link>
+              </div>
+              <div className="py-2">
+                <Link href="#" className=" text-blue-900 text-sm">
+                  Northen Light
+                </Link>
+              </div>
+              <div className="py-2">
+                <Link href="#" className=" text-blue-900 text-sm">
+                  Imprints & Private Policy
+                </Link>
+              </div>
+            </div>
+            {/* contact us*/}
+            <div className="text-center  border-b border-x-0 border-t-0  border-gray-300 py-5">
+              <h1 className="uppercase text-blue-900 font-bold text-xl my-5">
+                Contact Us
+              </h1>
+              <div className="py-2">
+                <i className="block text-blue-900 text-xl">@@</i>
+                <Link href="#" className=" text-blue-900 text-sm">
+                  +354 7756 6480
+                </Link>
+              </div>
+              <div className="py-2">
+                <i className="block text-blue-900 text-xl">@@</i>
+                <Link href="#" className=" text-blue-900 text-sm">
+                  Whatsapp
+                </Link>
+              </div>
+             
+              <div className="py-2">
+                <i className="block text-blue-900 text-xl">@@</i>
+                <Link href="#" className=" text-blue-900 text-sm">
+                  info@bluehouse.is
+                </Link>
+              </div>
+             
+              <div className="py-2">
+                <i className="block text-blue-900 text-xl">@@</i>
+                <Link href="#" className=" text-blue-900 text-sm">
+                  Valhusabraut 19 <br />Seltjarnarnes, 170, Iceland
+                </Link>
+              </div>
+             
+              <div className="py-2">
+                <i className="block text-blue-900 text-xl">@@</i>
+                <Link href="#" className=" text-blue-900 text-sm">
+                  Grotta Nortern <br />Lights Apartment
+                </Link>
+              </div>
+            </div>
+            {/* follow us */}
+            <div className="text-center ">
+              <h1 className="uppercase text-blue-900 font-bold text-xl my-5">
+                Follow Us
+              </h1>
+              <i className="text-blue-900 text-xl mx-2">@</i>
+              <i className="text-blue-900 text-xl mx-2">#</i>
+              <i className="text-blue-900 text-xl mx-2">@</i>
+              <i className="text-blue-900 text-xl mx-2">$</i>
+            </div>
+            <p className=" text-blue-900 opacity-60 text-sm my-5 px-16 text-center w-full">
+              Blue House 2023
             </p>
-          </div>
-          <div className="text-center  border-b border-x-0 border-t-0  border-gray-300">
-             <h1 className="uppercase text-blue-900 font-bold text-xl my-5">
-              Our NewsLetter
-            </h1>
-            <p className=" text-blue-900 text-sm mb-10 px-16">
-              Sign up for our newsletter!
-            </p>
-          </div>
-          <div className="text-center  border-b border-x-0 border-t-0  border-gray-300">
-             <h1 className="uppercase text-blue-900 font-bold text-xl my-5">
-              Our NewsLetter
-            </h1>
-            <p className=" text-blue-900 text-sm mb-10 px-16">
-              Sign up for our newsletter!
-            </p>
-          </div>
-          <p className=" text-blue-900 opacity-60 text-sm mb-10 px-16 text-center w-full">Blue House 2023</p>
           </div>
         </footer>
       </div>
