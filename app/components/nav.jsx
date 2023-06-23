@@ -3,14 +3,19 @@ import React from "react";
 import { Navbar } from "flowbite-react";
 import Link from "next/link";
 
-const Nav = () => {
+const Nav = (props) => {
+
+  const handleClick = () => {
+    props.toggleSidbar();
+  };
+  
   return (
     <React.StrictMode>
       <nav className="bg-white py-4">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <Link href="/" className="text-gray-800 ">
+              <button className="text-gray-800 " onClick={handleClick}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -26,7 +31,7 @@ const Nav = () => {
                   />
                 </svg>
                 <i className="bx bx-menu"></i>
-              </Link>
+              </button>
             </div>
             <div className="flex items-center">
               <Link

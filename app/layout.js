@@ -1,12 +1,15 @@
 'use client'
 import "./globals.css";
+// import "@fullcalendar/common/main.min.css";
+// import "@fullcalendar/daygrid/main.min.css";
+// import "assets/vendor/sweetalert2/dist/sweetalert2.min.css";
 import { Inter } from "next/font/google";
 import Nav from "./components/nav";
 import Head from "next/head";
 
 // import Head from "./head"
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -22,9 +25,9 @@ export default function RootLayout({ children }) {
             href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
             rel="stylesheet"
           />
+          
         </Head>
         <body className="bg-gray-200">
-          <Nav />
           {/* <Head /> */}
           {children}
         </body>
